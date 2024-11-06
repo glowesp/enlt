@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrainsMonoNL Nerd Font Mono';
+  }
+@font-face {
+    font-family: 'JetBrainsMonoNL Nerd Font Mono';
+    src: url('JetBrainsMonoNLNerdFontCompleteM-Regular.woff2') format('woff2'), url('JetBrainsMonoNLNerdFontCompleteM-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+.background {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send it behind other content */
+    background-color: black; /* Solid black background */
+}
+
+.background::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 350px; /* Set a specific width for the image */
+    height: 350px; /* Set a specific height for the image */
+    background-image: url('obscure.jpg'); /* Set the background image */
+    background-size: contain; /* Scale the image to fit within the specified dimensions */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the image */
+    transform: translate(-50%, -50%); /* Adjust position to truly center it */
+}
+
+.center-container {
+    display: flex; /* Use Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    height: calc(100vh - 60px); /* Full viewport height minus header height */
+    margin-top: 60px; /* Adjust margin to account for header height */
+}
+
+.content {
+    color: white; /* Text color for visibility */
+    padding: 5px; /* Add some padding */
+    text-align: center; /* Center the text */
+}
+
+.logo-container {
+    z-index: 900; /* Ensure it is above other content */
+}
+
+.header {
+    position: fixed; /* Fixed position to stay at the top */
+    font-family: 'JetBrainsMonoNL Nerd Font Mono';
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1); /* Semi-transparent background */
+    color: white; /* Text color */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    padding: 10px 20px; /* Padding for the header */
+    z-index: 10; /* Ensure it is above other content */
+}
+
+.place-items-center {
+    place-items: center;
+}
+
+.dim {
+    opacity: 0.5;
+}
+
+.headerdim {
+    opacity: 0.3;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.countdown {
+    font-size: 13px; /* Font size for the countdown */
+    margin-right: 10px; /* Add space below the countdown */
+    width: 10%;
+}
+
+.scrolling-text {
+    width: 100%; /* Make the scrolling text span the entire width */
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center; /* Center the text */
+}
+
+marquee {
+    width: 100%; /* Ensure the marquee spans the full width */
+    font-size: 13px; /* Set font size to 13px */
+}
+
+li {
+    list-style-type: none;
+}
+
+.list {
+    font-size: 0.9rem;
+    margin-top: 0px;
+    position: relative;
+    white-space: nowrap;
+    color: white; /* Text color for visibility */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center the text */
+}
+
+::selection {
+    background: #535353;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .logo-container{
+        margin-top: 5rem;
+    }
+    .header {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the start */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .countdown {
+        margin-bottom: 5px; /* Add space below the countdown */
+        font-size: 18px; /* Slightly smaller font size */
+    }
+
+    .scrolling-text {
+        font-size: 16px; /* Adjust font size for scrolling text */
+    }
+
+    .countdown {
+        font-size: 15px;
+        text-align: center; /* Center the text */
+        width: 100%; /* Make it take the full width */
+        margin: 0; /* Remove any margin */
+    }
+
+    marquee {
+        font-size: 13px; /* Keep font size consistent on smaller screens */
+    }
+    .center-container {
+        display: flex; /* Use Flexbox for alignment */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        height: calc(100vh - 60px); /* Full viewport height minus header height */
+        margin-top: 30px; /* Adjust margin to account for header height */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px; /* Reduce padding for smaller screens */
+    }
+
+    .countdown {
+        font-size: 16px; /* Further reduce font size */
+    }
+
+    .scrolling-text {
+        font-size: 14px; /* Further reduce font size */
+    }
+    .countdown {
+        font-size: 15px;
+        text-align: center; /* Center the text */
+        width: 100%; /* Make it take the full width */
+        margin: 0; /* Remove any margin */
+    }
+
+    marquee {
+        font-size: 13px; /* Keep font size consistent on very small screens */
+    }
+    .center-container {
+        display: flex; /* Use Flexbox for alignment */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        height: calc(100vh - 60px); /* Full viewport height minus header height */
+        margin-top: 40px; /* Adjust margin to account for header height */
+    }
+}
+
+.footer {
+    position: fixed; /* Fixed position to stay at the bottom */
+    left: 0;
+    right: 0;
+    bottom: 0; /* Align to the bottom of the viewport */
+    text-align: center; /* Center the text */
+    padding: 10px; /* Add some padding */
+    color: white; /* Text color */
+    z-index: 10; /* Ensure it is above other content */
+    user-select: none; /* Prevent text selection */
+}
+
+#logo {
+    width: 20vw; /* Set the logo width to 20% of the viewport width */
+    max-width: 200px; /* Set a maximum width for larger screens */
+}
+
+.content p {
+    font-size: 0.9em; /* Set font size to 2.5% of the viewport width */
+    max-height: 24px; /* Set a maximum height for the text */
+}
+
+a {
+    text-decoration: none; /* Remove underline from links */
+    color: rgb(255, 255, 255, 0.7); /* Set your desired color */
+}
+
+a:hover { 
+    text-decoration: underline;
+}
+
