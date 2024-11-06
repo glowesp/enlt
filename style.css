@@ -42,6 +42,8 @@
     align-items: center; /* Center items horizontally */
     height: calc(100vh - 60px); /* Full viewport height minus header height */
     margin-top: 60px; /* Adjust margin to account for header height */
+    overflow: hidden; /* Prevent scrolling */
+    padding: 0 20px; /* Add horizontal padding */
 }
 
 .content {
