@@ -28,7 +28,7 @@
     left: 50%; /* Center horizontally */
     width: 350px; /* Set a specific width for the image */
     height: 350px; /* Set a specific height for the image */
-    background-image: url('obscure.jpg'); /* Set the background image */
+    background-image: url('/obscure.jpg'); /* Set the background image */
     background-size: contain; /* Scale the image to fit within the specified dimensions */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the image */
@@ -160,6 +160,7 @@ li {
         align-items: center; /* Center items horizontally */
         height: calc(100vh - 60px); /* Full viewport height minus header height */
         margin-top: 30px; /* Adjust margin to account for header height */
+        overflow: hidden; /* Prevent scrolling */
     }
 }
 
@@ -192,6 +193,7 @@ li {
         align-items: center; /* Center items horizontally */
         height: calc(100vh - 60px); /* Full viewport height minus header height */
         margin-top: 40px; /* Adjust margin to account for header height */
+        overflow: hidden; /* Prevent scrolling */
     }
 }
 
@@ -224,5 +226,20 @@ a {
 
 a:hover { 
     text-decoration: underline;
+}
+
+/* Add this to the existing CSS file */
+html, body {
+    overflow: hidden; /* Prevent scrolling on mobile and tablet browsers */
+    height: 100%; /* Ensure the body takes full height */
+}
+
+/* Additional media query for smaller devices */
+@media (max-width: 480px) {
+    /* Existing styles... */
+    .center-container {
+        height: calc(100vh - 60px); /* Full viewport height minus header height */
+        overflow: hidden; /* Prevent scrolling */
+    }
 }
 
